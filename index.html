@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f6f4" />
+    <title>QRentry | กิจกรรมนักศึกษา</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script id="seed-data" type="application/json">
+      {
+        "users": [
+          {
+            "id": "u-admin",
+            "role": "admin",
+            "email": "admin@rmutto.ac.th",
+            "password": "admin",
+            "studentId": "ADMIN001",
+            "firstName": "ผู้ดูแล",
+            "lastName": "ระบบ",
+            "faculty": "ส่วนกลาง",
+            "department": "บริหารระบบ",
+            "year": "-",
+            "avatar": "",
+            "activityIds": []
+          },
+          {
+            "id": "u-staff",
+            "role": "staff",
+            "email": "staff@rmutto.ac.th",
+            "password": "staff",
+            "studentId": "STAFF001",
+            "firstName": "ณัฐวุฒิ",
+            "lastName": "ใจดี",
+            "faculty": "ส่วนกลาง",
+            "department": "กิจกรรมนักศึกษา",
+            "year": "-",
+            "avatar": "",
+            "activityIds": []
+          },
+          {
+            "id": "u-1001",
+            "role": "student",
+            "email": "student@rmutto.ac.th",
+            "password": "student123",
+            "studentId": "66520001",
+            "firstName": "พิมพ์ชนก",
+            "lastName": "แสงทอง",
+            "faculty": "วิทยาศาสตร์และเทคโนโลยี",
+            "department": "เทคโนโลยีสารสนเทศ",
+            "year": "3",
+            "avatar": "",
+            "activityIds": ["ev-2"]
+          },
+          {
+            "id": "u-1002",
+            "role": "student",
+            "email": "narin@rmutto.ac.th",
+            "password": "student123",
+            "studentId": "66520002",
+            "firstName": "นรินทร์",
+            "lastName": "วัฒนกุล",
+            "faculty": "วิทยาศาสตร์และเทคโนโลยี",
+            "department": "เทคโนโลยีสารสนเทศ",
+            "year": "3",
+            "avatar": "",
+            "activityIds": []
+          },
+          {
+            "id": "u-1003",
+            "role": "student",
+            "email": "kamon@rmutto.ac.th",
+            "password": "student123",
+            "studentId": "66530014",
+            "firstName": "กมลวรรณ",
+            "lastName": "สุขใจ",
+            "faculty": "บริหารธุรกิจและเทคโนโลยีสารสนเทศ",
+            "department": "การจัดการ",
+            "year": "2",
+            "avatar": "",
+            "activityIds": ["ev-1"]
+          },
+          {
+            "id": "u-1004",
+            "role": "student",
+            "email": "thanawat@rmutto.ac.th",
+            "password": "student123",
+            "studentId": "66540028",
+            "firstName": "ธนวัฒน์",
+            "lastName": "มีสุข",
+            "faculty": "เกษตรศาสตร์และทรัพยากรธรรมชาติ",
+            "department": "เทคโนโลยีการผลิตพืช",
+            "year": "1",
+            "avatar": "",
+            "activityIds": []
+          }
+        ],
+        "faculties": [
+          "วิทยาศาสตร์และเทคโนโลยี",
+          "บริหารธุรกิจและเทคโนโลยีสารสนเทศ",
+          "เกษตรศาสตร์และทรัพยากรธรรมชาติ",
+          "สัตวแพทยศาสตร์"
+        ],
+        "departments": [
+          "เทคโนโลยีสารสนเทศ",
+          "การจัดการ",
+          "เทคโนโลยีการผลิตพืช",
+          "สัตวศาสตร์"
+        ],
+        "activities": [
+          {
+            "id": "ev-1",
+            "title": "ปฐมนิเทศนักศึกษาใหม่ 2569",
+            "date": "2026-11-09",
+            "time": "08:30",
+            "requiredCount": 1,
+            "capacity": 240,
+            "location": "หอประชุมมังคลอุบล",
+            "description": "พบปะเพื่อนใหม่ ทำความรู้จักมหาวิทยาลัย และรับฟังแนวทางการใช้ชีวิตในรั้วมหาวิทยาลัย",
+            "reminder": "ลงทะเบียนหน้างานก่อนเริ่มกิจกรรม 30 นาที",
+            "image": "",
+            "attendees": 128,
+            "status": "เปิดรับสมัคร"
+          },
+          {
+            "id": "ev-2",
+            "title": "วิ่งด้วยกัน แบ่งปันสุข",
+            "date": "2026-11-14",
+            "time": "06:00",
+            "requiredCount": 1,
+            "capacity": 180,
+            "location": "สนามกีฬากลาง",
+            "description": "กิจกรรมวิ่งเพื่อสุขภาพและระดมทุนสนับสนุนทุนการศึกษา ระยะทาง 3 กิโลเมตร",
+            "reminder": "รับเสื้อและหมายเลขวิ่งได้ตั้งแต่เวลา 05:30 น.",
+            "image": "",
+            "attendees": 86,
+            "status": "เปิดรับสมัคร"
+          },
+          {
+            "id": "ev-3",
+            "title": "Green Campus: ปลูกป่าชายเลน",
+            "date": "2026-11-21",
+            "time": "09:00",
+            "requiredCount": 2,
+            "capacity": 80,
+            "location": "ศูนย์ศึกษาธรรมชาติป่าชายเลน",
+            "description": "ชวนอาสาสมัครร่วมเรียนรู้ระบบนิเวศและปลูกต้นโกงกางเพื่อฟื้นฟูพื้นที่ชายฝั่ง",
+            "reminder": "เตรียมหมวกและรองเท้าที่เหมาะกับพื้นที่เปียก",
+            "image": "",
+            "attendees": 53,
+            "status": "เปิดรับสมัคร"
+          },
+          {
+            "id": "ev-4",
+            "title": "เปิดโลกอาชีพ Tech & Biz",
+            "date": "2026-11-28",
+            "time": "13:00",
+            "requiredCount": 1,
+            "capacity": 300,
+            "location": "อาคารวิทยบริการ",
+            "description": "พูดคุยกับรุ่นพี่และผู้ประกอบการ แลกเปลี่ยนประสบการณ์เตรียมตัวก่อนเข้าสู่โลกการทำงาน",
+            "reminder": "โปรดแสดง QR Code ที่จุดลงทะเบียน",
+            "image": "",
+            "attendees": 174,
+            "status": "เปิดรับสมัคร"
+          }
+        ],
+        "news": [
+          {
+            "id": "news-1",
+            "title": "เปิดรับสมัครทุนการศึกษาภาคเรียนที่ 2",
+            "date": "2026-11-03",
+            "category": "ประกาศ",
+            "body": "นักศึกษาที่ประสงค์ขอรับทุนการศึกษา สามารถยื่นเอกสารได้ที่กองพัฒนานักศึกษา ภายในวันที่ 20 พฤศจิกายน 2569",
+            "image": ""
+          },
+          {
+            "id": "news-2",
+            "title": "กำหนดการลงทะเบียนเรียนภาคเรียนใหม่",
+            "date": "2026-11-01",
+            "category": "ข่าวสาร",
+            "body": "ตรวจสอบกำหนดการลงทะเบียนและชำระค่าธรรมเนียมได้ผ่านระบบบริการการศึกษา เตรียมข้อมูลให้พร้อมก่อนถึงวันลงทะเบียน",
+            "image": ""
+          },
+          {
+            "id": "news-3",
+            "title": "ขอเชิญร่วมงานสัปดาห์วิทยาศาสตร์",
+            "date": "2026-10-28",
+            "category": "กิจกรรม",
+            "body": "พบกับนิทรรศการและเวิร์กช็อปจากนักศึกษาทุกชั้นปี วันที่ 25–27 พฤศจิกายน ณ อาคารเรียนรวม",
+            "image": ""
+          }
+        ],
+        "loginHistory": [],
+        "auditLogs": [],
+        "checkins": []
+      }
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>
